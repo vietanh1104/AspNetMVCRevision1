@@ -1,0 +1,63 @@
+﻿@using Revision1.Models;
+@model List<SanPham>
+
+@{
+    ViewBag.Title = "DanhSachSanPham";
+}
+
+<h2>DanhSachSanPham</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Giá tiền
+        </th>
+        <th>
+            Giảm giá
+        </th>
+        <th>
+            Thành tiền
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.masp
+        </td>
+        <td>
+            @item.tensanpham
+        </td>
+        <td>
+            @item.soluong
+        </td>
+        <td>
+            @item.giatien
+        </td>
+        <td>
+            @if (item.giamgia == 1)
+            {
+                <span>Có</span>
+            }
+            @if (item.giamgia == 0)
+            {
+                <span>Không</span>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thanhtien)
+        </td>
+    </tr>
+}
+
+</table>

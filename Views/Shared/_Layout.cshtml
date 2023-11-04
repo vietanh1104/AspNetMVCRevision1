@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .banner{
+            background-color:  #3f48cc;
+            text-align:center;
+            vertical-align: central;
+            padding: 40px;
+        }
+        .app-name{
+            font-family: Calibri;
+            margin: 60px;
+            text-decoration: none;
+            color: white;
+            font-size: 40px;
+        }
+        .app-name {
+            font-family: Calibri;
+            margin: 60px;
+            text-decoration: none;
+            color: white;
+            font-size: 40px;
+        }
+        .link-container{
+            display: flex;
+            flex-direction:row-reverse;
+            margin: 10px 0;
+            background-color: #6871d7;
+        }
+        .link {
+            font-family: Calibri;
+            text-decoration: none;
+            color: white;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        @Html.ActionLink("KIỂM TRA 1 - ASP.NET", "DanhSachSanPham", "QuanLySanPham", new { area = "" }, new { @class = "app-name" })
+    </div>
+    <div class="link-container">
+        @Html.ActionLink("Danh sách sản phẩm", "DanhSachSanPham", "QuanLySanPham", new { area = "" }, new { @class = "link" })
+        @Html.ActionLink("Thêm sản phẩm", "ThemSanPham", "QuanLySanPham", new { area = "" }, new { @class = "link" })
+
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

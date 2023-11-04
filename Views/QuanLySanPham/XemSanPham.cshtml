@@ -1,0 +1,45 @@
+﻿@model Revision1.Models.SanPham
+
+@{
+    ViewBag.Title = "Xen sản phẩm";
+}
+
+<h2>ThemSanPham</h2>
+
+
+@{
+    ViewBag.Title = "Xen thông tin sản phẩm vừa nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <label>Mã sản phẩm</label>
+    <input type="text" name="masp" value="@Model.masp" />
+</div>
+<div>
+    <label>Tên sản phẩm</label>
+    <input type="text" name="tensp" value="@Model.tensanpham" />
+</div>
+<div>
+    <label>Số lượng: </label>
+    <input type="text" name="soluong" value="@Model.soluong" />
+</div>
+<div>
+    <label>Giá: </label>
+    <input type="text" name="gia" value="@Model.giatien" />
+</div>
+<div>
+    <label>Giảm giá: </label>
+    @if (Model.giamgia == 0)
+    {
+        <span>Có</span>
+    }
+    else
+    {
+        <span>Không</span>
+    }
+</div>
+<div>
+    <label>Thành tiền: </label>
+    <input type="text" name="gia" value="@Model.thanhtien" />
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Thêm sản phẩm";
+}
+
+<h2>ThemSanPham</h2>
+
+
+@{
+    ViewBag.Title = "Nhập sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nhập sản phẩm</h2>
+
+<form action="~/QuanLySanPham/ThemSanPham" method="post">
+    <div>
+        <label>Mã sản phẩm</label>
+        <input type="text" name="masp" />
+    </div>
+    <div>
+        <label>Tên sản phẩm</label>
+        <input type="text" name="tensanpham" />
+    </div>
+    <div>
+        <label>Số lượng: </label>
+        <input type="text" name="soluong"  />
+    </div>
+    <div>
+        <label>Giá: </label>
+        <input type="text" name="giatien" />
+    </div>
+    <div>
+        <label>Giảm giá: </label>
+        <input type="radio" name="giamgia" value="1" /> Có
+        <input type="radio" name="giamgia" value="0" /> Không
+    </div>
+    <input type="submit" value="Nhập" />
+</form>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
